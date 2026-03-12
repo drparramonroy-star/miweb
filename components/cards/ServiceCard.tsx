@@ -5,12 +5,13 @@ import { WhatsAppButton } from '../common/WhatsAppButton';
 export interface ServiceCardProps {
   title: string;
   description: string;
-  keyMessage: string; // Nuevo: Para el insight médico/humano
+  keyMessage: string;
   icon?: React.ReactNode;
   featured?: boolean;
   ctaLabel?: string;
   ctaPhone: string;
   ctaMessage: string;
+  index?: number; // Nuevo: Nos permite saber qué número de tarjeta es para cambiar su color
 }
 
 export const ServiceCard = ({
@@ -21,28 +22,68 @@ export const ServiceCard = ({
   featured = false,
   ctaLabel = "Más información",
   ctaPhone,
-  ctaMessage
+  ctaMessage,
+  index = 0
 }: ServiceCardProps) => {
+  
+  // Paletas de colores minimalistas para cada una de las 4 tarjetas
+  const cardVariants = [
+    { 
+      // 1. Manga (Turquesa de la marca)
+      borderHover: "hover:border-[#2FA4B7]",
+      iconBg: "bg-[#2FA4B7]/10",
+      iconColor: "text-[#2FA4B7]",
+      noteBg: "bg-[#2FA4B7]/5",
+      noteBorder: "border-[#2FA4B7]/20",
+      noteText: "text-[#0F3C5C]"
+    },
+    { 
+      // 2. Bypass (Azul Profundo)
+      borderHover: "hover:border-[#0F3C5C]",
+      iconBg: "bg-[#0F3C5C]/10",
+      iconColor: "text-[#0F3C5C]",
+      noteBg: "bg-[#0F3C5C]/5",
+      noteBorder: "border-[#0F3C5C]/20",
+      noteText: "text-[#0F3C5C]"
+    },
+    { 
+      // 3. Bipartición (Esmeralda Médico)
+      borderHover: "hover:border-emerald-500",
+      iconBg: "bg-emerald-500/10",
+      iconColor: "text-emerald-600",
+      noteBg: "bg-emerald-50",
+      noteBorder: "border-emerald-100",
+      noteText: "text-emerald-900"
+    },
+    { 
+      // 4. Laparoscópica (Celeste Limpio)
+      borderHover: "hover:border-sky-500",
+      iconBg: "bg-sky-500/10",
+      iconColor: "text-sky-600",
+      noteBg: "bg-sky-50",
+      noteBorder: "border-sky-100",
+      noteText: "text-sky-900"
+    }
+  ];
+
+  // Asignamos la paleta basándonos en el orden de la tarjeta
+  const variant = cardVariants[index % 4];
+
   return (
-    <div className={`relative flex flex-col h-full p-8 md:p-10 rounded-3xl transition-all duration-500 border ${
-      featured 
-        ? 'border-[#2FA4B7] bg-white shadow-[0_20px_50px_rgba(47,164,183,0.15)] scale-105 z-10' 
-        : 'border-slate-100 bg-white shadow-sm hover:shadow-xl hover:-translate-y-1'
-    }`}>
-      {/* Badge de Procedimiento Estrella */}
+    <div className={`relative flex flex-col h-full p-8 md:p-10 rounded-3xl transition-all duration-300 border bg-white shadow-sm hover:shadow-xl hover:-translate-y-1 ${variant.borderHover} ${featured ? 'border-[#2FA4B7]/30' : 'border-slate-100'}`}>
+      
+      {/* Badge de Procedimiento Estrella (Alineado arriba a la izquierda para no romper la simetría) */}
       {featured && (
-        <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-          <Badge variant="turquoise" className="!px-6 !py-1.5 shadow-md whitespace-nowrap">
+        <div className="absolute -top-3.5 left-8">
+          <Badge variant="turquoise" className="!px-5 !py-1 shadow-sm whitespace-nowrap text-xs">
             Procedimiento Estrella
           </Badge>
         </div>
       )}
 
-      {/* Icono Estilizado */}
+      {/* Icono Estilizado con color dinámico */}
       {icon && (
-        <div className={`mb-8 flex items-center justify-center w-16 h-16 rounded-2xl ${
-          featured ? 'bg-[#2FA4B7] text-white shadow-lg shadow-cyan-100' : 'bg-[#2FA4B7]/10 text-[#2FA4B7]'
-        }`}>
+        <div className={`mb-8 flex items-center justify-center w-14 h-14 rounded-2xl ${variant.iconBg} ${variant.iconColor}`}>
           {icon}
         </div>
       )}
@@ -51,15 +92,13 @@ export const ServiceCard = ({
         {title}
       </h3>
 
-      <p className="text-slate-600 mb-8 leading-relaxed text-base md:text-lg">
+      <p className="text-slate-600 mb-8 leading-relaxed text-base">
         {description}
       </p>
 
-      {/* Bloque de Valor / Key Message */}
-      <div className={`mb-10 p-5 rounded-2xl text-sm md:text-base font-medium leading-snug ${
-        featured ? 'bg-emerald-50 text-emerald-800 border border-emerald-100' : 'bg-blue-50 text-[#0F3C5C]/80 border border-blue-100'
-      }`}>
-        <span className="block mb-1 text-[10px] uppercase tracking-widest opacity-60">Nota médica:</span>
+      {/* Bloque de Valor / Key Message con fondo sutil dinámico */}
+      <div className={`mb-10 p-5 rounded-2xl text-sm font-medium leading-snug border ${variant.noteBg} ${variant.noteBorder} ${variant.noteText}`}>
+        <span className="block mb-1.5 text-[10px] uppercase tracking-widest opacity-60 font-bold">Nota médica:</span>
         {keyMessage}
       </div>
 
@@ -69,7 +108,7 @@ export const ServiceCard = ({
           message={ctaMessage}
           label={ctaLabel}
           variant={featured ? 'primary' : 'outline'}
-          className={`w-full !py-4 !rounded-xl font-bold ${featured ? 'shadow-lg' : ''}`}
+          className="w-full !py-4 !rounded-xl font-bold"
         />
       </div>
     </div>

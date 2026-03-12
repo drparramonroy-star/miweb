@@ -25,15 +25,15 @@ export const HERO_DATA = {
   ]
 };
 
-// 2. SERVICES DATA (AQUÍ ESTÁ LA MEJORA)
+// 2. SERVICES DATA (ACTUALIZADO CON AUDIO DEL DOC)
 export const SERVICES_DATA = {
   title: "Procedimientos de Cirugía Bariátrica en Nayarit",
-  subtitle: "Nuestro equipo médico ofrece procedimientos bariátricos seguros y acompañados por especialistas para ayudar a pacientes a recuperar su salud y calidad de vida.",
+  subtitle: "Nuestro equipo médico ofrece procedimientos bariátricos seguros y mínimamente invasivos para ayudar a los pacientes a recuperar su salud y calidad de vida.",
   items: [
     {
       title: "Manga gástrica",
       description: "Procedimiento que reduce el tamaño del estómago para ayudar al paciente a perder peso de forma segura bajo supervisión médica.",
-      keyMessage: "Es el procedimiento más solicitado por su seguridad y efectividad metabólica.",
+      keyMessage: "Es el procedimiento más solicitado por su seguridad y efectividad.",
       featured: true,
       ctaMessage: "Hola, me interesa información sobre la Manga Gástrica."
     },
@@ -45,11 +45,18 @@ export const SERVICES_DATA = {
       ctaMessage: "Hola, quiero saber más sobre el Bypass Gástrico."
     },
     {
-      title: "Evaluación integral",
-      description: "Valoración médica completa para determinar si eres candidato y cuál es el procedimiento adecuado para ti.",
-      keyMessage: "Incluye revisión del historial clínico y orientación por nuestro equipo especialista.",
+      title: "Bipartición intestinal",
+      description: "Técnica innovadora que combina la reducción del estómago con una modificación intestinal para un excelente control metabólico.",
+      keyMessage: "Equilibrio ideal entre pérdida de peso y buena absorción de nutrientes.",
       featured: false,
-      ctaMessage: "Hola, quiero agendar una evaluación para ver si soy candidato."
+      ctaMessage: "Hola, quiero saber más sobre la Bipartición Intestinal."
+    },
+    {
+      title: "Cirugía Laparoscópica",
+      description: "Realizamos nuestras cirugías con técnicas de mínima invasión. También tratamos problemas de hernias, vesícula y cirugía antirreflujo.",
+      keyMessage: "Procedimientos más eficientes, seguros y con recuperación rápida.",
+      featured: false,
+      ctaMessage: "Hola, me interesa información sobre cirugía laparoscópica (hernias/vesícula/antirreflujo)."
     }
   ]
 };

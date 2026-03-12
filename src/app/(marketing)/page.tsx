@@ -11,6 +11,7 @@ import { TestimonialsSection } from '../../../components/sections/TestimonialsSe
 import { FaqSection } from '../../../components/sections/FaqSection';
 import { FinalCtaSection } from '../../../components/sections/FinalCtaSection';
 import { FloatingWhatsAppButton } from '../../../components/common/FloatingWhatsAppButton';
+import { BmiCalculatorSection } from '../../../components/sections/BmiCalculatorSection';
 
 // Contenido
 import { SITE_CONFIG } from '../../../content/config';
@@ -37,7 +38,7 @@ export default function HomePage() {
         items={[
           { 
             title: "Enfoque especializado", 
-            description: "Centrados en manga gástrica y bypass con rigor médico.",
+            description: "Centrados en cirugía bariátrica como manga gástrica, bypass gástrico y bipartición intestinal.",
             icon: <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
           },
           { 
@@ -93,8 +94,8 @@ export default function HomePage() {
             icon: <img src="/images/bento-equipo.jpg" className="w-full h-full object-cover" alt="Equipo Médico" />
           },
           { 
-            title: "Enfoque Paciente Local", 
-            description: "Atención diseñada para la realidad y necesidades del paciente nayarita.",
+            title: "Enfoque personalizado", 
+            description: "Atención médica diseñada a la medida de la realidad y necesidades de cada paciente.",
             keyMessage: "Trato humano y directo",
             icon: <img src="/images/bento-local.jpg" className="w-full h-full object-cover" alt="Paciente Local" />
           },
@@ -106,6 +107,8 @@ export default function HomePage() {
           }
         ]}
       />
+      {/* NUEVO PLUS: CALCULADORA IMC */}
+      <BmiCalculatorSection phone={SITE_CONFIG.phone} />
 
       {/* 5. UBICACIONES (Fondo Blanco) */}
       <LocationsSection 
@@ -131,7 +134,7 @@ export default function HomePage() {
           },
           { 
             title: "Preparación y evaluación", 
-            description: "Antes del procedimiento el paciente recibe orientación nutricional y médica para preparar su cuerpo y mejorar los resultados.",
+            description: "Antes del procedimiento el paciente recibe orientación nutricional, médica y psicológica para preparar su cuerpo y mejorar los resultados.",
             keyMessage: "El proceso se planifica cuidadosamente."
           },
           { 
