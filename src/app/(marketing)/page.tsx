@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 
 // Secciones
@@ -12,6 +14,8 @@ import { FaqSection } from '../../../components/sections/FaqSection';
 import { FinalCtaSection } from '../../../components/sections/FinalCtaSection';
 import { FloatingWhatsAppButton } from '../../../components/common/FloatingWhatsAppButton';
 import { BmiCalculatorSection } from '../../../components/sections/BmiCalculatorSection';
+// IMPORTANTE: Nueva sección de Reels
+import { ReelsSection } from '../../../components/sections/ReelsSection';
 
 // Contenido
 import { SITE_CONFIG } from '../../../content/config';
@@ -32,7 +36,7 @@ export default function HomePage() {
         trustSignals={HERO_DATA.trustSignals}
       />
 
-      {/* 2. TRUST BAR (Fondo Blanco - Limpieza) */}
+      {/* 2. TRUST BAR - Actualizado con Puerto Vallarta */}
       <TrustSection 
         sectionTitle="Atención bariátrica con enfoque humano y especializado"
         items={[
@@ -47,8 +51,8 @@ export default function HomePage() {
             icon: <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 005.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
           },
           { 
-            title: "Atención en Nayarit", 
-            description: "Sedes físicas en Tepic y Bucerías para tu cercanía.",
+            title: "Nayarit y Puerto Vallarta", 
+            description: "Sedes en Tepic y Riviera Nayarit, con fácil acceso desde toda la bahía.",
             icon: <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
           },
           { 
@@ -59,7 +63,7 @@ export default function HomePage() {
         ]}
       />
 
-      {/* 3. SERVICIOS (Fondo Gris - bg-slate-50) */}
+      {/* 3. SERVICIOS */}
       <ServicesSection 
         title={SERVICES_DATA.title}
         subtitle={SERVICES_DATA.subtitle}
@@ -76,44 +80,45 @@ export default function HomePage() {
         }))}
       />
 
-      {/* 4. BENEFICIOS (BENTO GRID - Fondo Azul Profundo) */}
+      {/* 4. BENEFICIOS (BENTO GRID) */}
       <BenefitsSection 
         title="¿Por qué Bahía Surgery?"
-        subtitle="Un enfoque multidisciplinario diseñado para pacientes que buscan resultados permanentes y seguros en Nayarit."
+        subtitle="Un enfoque multidisciplinario diseñado para pacientes que buscan resultados permanentes y seguros en Nayarit y Riviera Nayarit."
         benefits={[
           { 
-            title: "Atención en Tepic y Bucerías", 
-            description: "Dos sedes estratégicas para acompañarte en la capital y la zona costera de Nayarit.",
+            title: "Tepic y Riviera Nayarit", 
+            description: "Dos sedes estratégicas para acompañarte en la capital y la zona costera.",
             keyMessage: "Mayor cercanía y seguimiento local",
-            icon: <img src="/images/bento-sedes.jpg" className="w-full h-full object-cover" alt="Sedes Nayarit" />
+            icon: <img src="/images/quirofano-1.jpg" className="w-full h-full object-cover" alt="Instalaciones y Sedes" />
           },
           { 
             title: "Equipo Multidisciplinario", 
             description: "Cirujano, Nutrición y Psicología integrados en un solo plan de salud.",
             keyMessage: "Atención Integral 360°",
-            icon: <img src="/images/bento-equipo.jpg" className="w-full h-full object-cover" alt="Equipo Médico" />
+            icon: <img src="/images/quirofano-2.jpg" className="w-full h-full object-cover" alt="Equipo Médico en acción" />
           },
           { 
             title: "Enfoque personalizado", 
             description: "Atención médica diseñada a la medida de la realidad y necesidades de cada paciente.",
             keyMessage: "Trato humano y directo",
-            icon: <img src="/images/bento-local.jpg" className="w-full h-full object-cover" alt="Paciente Local" />
+            icon: <img src="/images/bento-local.jpg" className="w-full h-full object-cover" alt="Atención personalizada" />
           },
           { 
             title: "Seguimiento Continuo", 
             description: "Control médico riguroso desde la valoración inicial hasta tu éxito post-operatorio.",
             keyMessage: "Acompañamiento de por vida",
-            icon: <img src="/images/bento-seguimiento.jpg" className="w-full h-full object-cover" alt="Seguimiento" />
+            icon: <img src="/images/bento-seguimiento.jpg" className="w-full h-full object-cover" alt="Seguimiento médico" />
           }
         ]}
       />
-      {/* NUEVO PLUS: CALCULADORA IMC */}
+
+      {/* CALCULADORA IMC */}
       <BmiCalculatorSection phone={SITE_CONFIG.phone} />
 
-      {/* 5. UBICACIONES (Fondo Blanco) */}
+      {/* 5. UBICACIONES */}
       <LocationsSection 
         title="Nuestras Ubicaciones"
-        subtitle="Encuéntranos en Tepic y Bucerías con instalaciones de primer nivel."
+        subtitle="Encuéntranos en Tepic y Riviera Nayarit con instalaciones de primer nivel."
         locations={LOCATIONS_DATA.map(l => ({
           ...l,
           ctaPhone: SITE_CONFIG.phone,
@@ -121,7 +126,7 @@ export default function HomePage() {
         }))}
       />
 
-      {/* 6. PROCESO (TIMELINE - Fondo Gris Claro) */}
+      {/* 6. PROCESO (TIMELINE) */}
       <ProcessSection 
         background="gray"
         title="Tu proceso hacia una nueva etapa"
@@ -129,23 +134,23 @@ export default function HomePage() {
         steps={[
           { 
             title: "Valoración inicial", 
-            description: "El proceso comienza con una consulta médica donde se evalúa el estado de salud del paciente y se determina si es candidato para cirugía bariátrica.",
-            keyMessage: "Aquí el paciente recibe orientación clara y personalizada."
+            description: "Consulta médica donde se evalúa el estado de salud y se determina si eres candidato.",
+            keyMessage: "Recibe orientación clara y personalizada."
           },
           { 
             title: "Preparación y evaluación", 
-            description: "Antes del procedimiento el paciente recibe orientación nutricional, médica y psicológica para preparar su cuerpo y mejorar los resultados.",
-            keyMessage: "El proceso se planifica cuidadosamente."
+            description: "Orientación nutricional, médica y psicológica para preparar tu cuerpo.",
+            keyMessage: "Planificación cuidadosa y profesional."
           },
           { 
             title: "Cirugía bariátrica", 
-            description: "El procedimiento se realiza en instalaciones hospitalarias equipadas con tecnología especializada.",
-            keyMessage: "Seguridad médica y atención profesional durante la cirugía."
+            description: "Procedimiento realizado en instalaciones equipadas con tecnología especializada.",
+            keyMessage: "Seguridad médica en todo momento."
           },
           { 
             title: "Seguimiento y nueva etapa", 
-            description: "Después de la cirugía el paciente continúa recibiendo acompañamiento del equipo para consolidar su transformación y mejorar su calidad de vida.",
-            keyMessage: "El proceso continúa después de la cirugía."
+            description: "Acompañamiento post-operatorio para consolidar tu transformación.",
+            keyMessage: "Tu éxito es nuestro objetivo final."
           }
         ]}
         ctaLabel="Iniciar mi valoración"
@@ -153,7 +158,7 @@ export default function HomePage() {
         ctaMessage="Hola, me gustaría iniciar mi proceso y agendar una valoración inicial."
       />
 
-      {/* 7. TESTIMONIOS (SLIDER - Fondo Blanco) */}
+      {/* 7. TESTIMONIOS */}
       <TestimonialsSection 
         background="white"
         title="Historias de pacientes"
@@ -162,32 +167,29 @@ export default function HomePage() {
           {
             name: "Paciente",
             location: "Tepic, Nayarit",
-            quote: "Durante años intenté bajar de peso con diferentes dietas, pero no lograba resultados duraderos. La valoración médica me ayudó a entender qué opción era la adecuada para mí y el proceso se sintió acompañado desde el inicio.",
-            keyMessage: "Hoy me siento con más energía y con una nueva perspectiva sobre mi salud."
+            quote: "La valoración médica me ayudó a entender qué opción era la adecuada para mí y el proceso se sintió acompañado desde el inicio.",
+            keyMessage: "Hoy me siento con más energía."
           },
           {
             name: "Paciente",
             location: "Riviera Nayarit",
-            quote: "Tenía muchas dudas antes de iniciar el proceso bariátrico. El equipo explicó cada paso con claridad y eso me dio confianza para tomar la decisión de cambiar mi vida.",
-            keyMessage: "Lo que más valoro es el seguimiento después del procedimiento."
-          },
-          {
-            name: "Paciente",
-            location: "Bahía de Banderas",
-            quote: "Después de años luchando con mi peso decidí buscar ayuda médica. Encontré un equipo profesional que realmente escucha, entiende tus miedos y te acompaña sin juzgar.",
-            keyMessage: "El proceso ha sido una oportunidad real para recuperar mi bienestar."
+            quote: "Tenía muchas dudas antes de iniciar. El equipo explicó cada paso con claridad y eso me dio mucha confianza.",
+            keyMessage: "Valoro mucho el seguimiento post-cirugía."
           }
         ]} 
       />
 
-      {/* 8. FAQ (Fondo Gris Claro) */}
+      {/* --- NUEVA SECCIÓN: REELS DE INSTAGRAM --- */}
+      <ReelsSection />
+
+      {/* 8. FAQ */}
       <FaqSection 
         title="Dudas Frecuentes"
         subtitle="Información importante para tu tranquilidad."
         items={FAQ_DATA}
       />
 
-      {/* 9. FINAL CTA (Fondo Azul Profundo) */}
+      {/* 9. FINAL CTA */}
       <FinalCtaSection 
         title="Tu nuevo horizonte comienza hoy"
         subtitle="Agenda tu valoración y recupera tu calidad de vida con el Dr. Parra Monroy."

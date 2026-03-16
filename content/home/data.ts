@@ -1,11 +1,11 @@
 import { SITE_CONFIG } from '../config';
 import { ServiceItem, LocationItem, FaqItem } from '../../types/data';
 
-// 1. HERO DATA
+// 1. HERO DATA - Ajustado para estatus (Riviera Nayarit) y autoridad médica
 export const HERO_DATA = {
   eyebrow: "Tu nuevo horizonte comienza aquí",
-  title: "Cirugía Bariátrica en Tepic y Bucerías, Nayarit",
-  subtitle: "Un equipo bariátrico multidisciplinario que acompaña tu transformación en Tepic y Bucerías con manga gástrica, bypass y seguimiento integral.",
+  title: "Cirugía Bariátrica en Tepic y Riviera Nayarit",
+  subtitle: "Un equipo bariátrico multidisciplinario que acompaña tu transformación en Tepic y Riviera Nayarit con cirugías bariátricas como: manga gástrica, bypass, bipartición intestinal y cirugía laparoscópica con un seguimiento integral.",
   image: "/images/hero-bahia-surgery.jpg", 
   video: "/videos/hero-bg.mp4", 
   primaryCta: {
@@ -14,20 +14,20 @@ export const HERO_DATA = {
     message: "Hola, me gustaría saber si soy candidato para una cirugía bariátrica."
   },
   secondaryCta: {
-    label: "Conocer procedimientos",
-    href: "#procedimientos"
+    label: "Conocer al Dr. Parra",
+    href: "https://drjorgeparra.com" // Enlace a sus diplomas y trayectoria
   },
   trustSignals: [
     "Especialistas Certificados",
-    "Atención Tepic y Bucerías",
+    "Atención Tepic y Riviera Nayarit",
     "Equipo Multidisciplinario",
     "Seguimiento Post-Operatorio"
   ]
 };
 
-// 2. SERVICES DATA (ACTUALIZADO CON AUDIO DEL DOC)
+// 2. SERVICES DATA - Incluyendo Puerto Vallarta para SEO Local
 export const SERVICES_DATA = {
-  title: "Procedimientos de Cirugía Bariátrica en Nayarit",
+  title: "Procedimientos de Cirugía Bariátrica en Nayarit y Puerto Vallarta",
   subtitle: "Nuestro equipo médico ofrece procedimientos bariátricos seguros y mínimamente invasivos para ayudar a los pacientes a recuperar su salud y calidad de vida.",
   items: [
     {
@@ -69,40 +69,36 @@ export const LOCATIONS_DATA = [
     description: "Consultorio equipado donde realizamos las valoraciones médicas iniciales, preparación y seguimiento para pacientes de la capital.",
     address: "Paseo de la Loma 407, Residencial La Loma, Tepic, Nayarit.",
     schedule: "Lun: 9:00–14:00 | Sáb: 10:00–14:00", 
-    mapUrl: "#", // Aquí pondrás el link real de Google Maps
+    mapUrl: "https://maps.app.goo.gl/vS1F4F9y7f4L8vXG9", // Ejemplo de link
     imageSrc: "/images/sede-tepic.jpg"
   },
   {
-    city: "Bucerías",
+    city: "Riviera Nayarit", // Se cambió Bucerías por Riviera Nayarit por estatus
     venue: "Hospital CMQ Riviera Nayarit",
-    description: "Instalaciones hospitalarias de vanguardia equipadas con máxima seguridad para realizar nuestros procedimientos bariátricos.",
+    description: "Instalaciones hospitalarias de vanguardia con fácil acceso desde Puerto Vallarta, equipadas para la máxima seguridad quirúrgica.",
     address: "Héroes de Nacozari 280, Bucerías, Nayarit.", 
     schedule: "Mar-Vie: 10:00–14:00 | 16:30–19:00",
-    mapUrl: "#", // Aquí pondrás el link real de Google Maps
+    mapUrl: "https://maps.app.goo.gl/uR6Y7Z8Q2P3L4M5N6", // Ejemplo de link
     imageSrc: "/images/sede-bucerias.jpg"
   }
 ];
 
-// 4. FAQ DATA (Dudas Frecuentes - Estrategia SEO)
+// 4. FAQ DATA
 export const FAQ_DATA: FaqItem[] = [
   {
     question: "¿Quién es candidato para cirugía bariátrica?",
-    answer: "La cirugía bariátrica puede ser una opción para personas con obesidad o sobrepeso que no han logrado resultados duraderos con otros métodos. Durante la valoración médica se analiza el estado de salud del paciente y se determina si es candidato para el procedimiento."
+    answer: "La cirugía bariátrica es una opción para personas con obesidad o sobrepeso que buscan un cambio duradero. Durante la valoración personalizada analizamos tu caso para determinar si eres candidato."
   },
   {
-    question: "¿Cuál es la diferencia entre manga gástrica y bypass gástrico?",
-    answer: "La manga gástrica reduce el tamaño del estómago para favorecer la pérdida de peso. El bypass gástrico modifica el sistema digestivo para lograr efectos metabólicos más profundos. Durante la valoración médica se determina cuál procedimiento es el más adecuado para ti."
+    question: "¿Cuál es la diferencia entre manga y bypass?",
+    answer: "La manga reduce el tamaño del estómago; el bypass modifica el proceso digestivo para un mayor impacto metabólico. El Dr. Parra te orientará sobre cuál es mejor para tu perfil."
   },
   {
-    question: "¿Cuánto cuesta la manga gástrica en Nayarit?",
-    answer: "El costo puede variar dependiendo del caso de cada paciente, el tipo de procedimiento y el proceso médico necesario. Por esta razón es importante realizar primero una valoración médica personalizada para darte un presupuesto exacto y transparente."
+    question: "¿Tienen atención en Puerto Vallarta?",
+    answer: "Nuestros procedimientos se realizan en el Hospital CMQ Riviera Nayarit, ubicado en Bucerías, con fácil acceso y cercanía total para pacientes de Puerto Vallarta y toda la bahía."
   },
   {
     question: "¿Cuánto tiempo dura la recuperación?",
-    answer: "La mayoría de los pacientes pueden retomar sus actividades gradualmente durante las semanas posteriores al procedimiento, siguiendo siempre las indicaciones y el acompañamiento constante de nuestro equipo médico."
-  },
-  {
-    question: "¿Dónde se realizan las cirugías?",
-    answer: "Las valoraciones médicas iniciales se realizan en nuestro consultorio en Tepic, y los procedimientos quirúrgicos se llevan a cabo en instalaciones hospitalarias de primer nivel en Bucerías, equipadas con la máxima seguridad para cirugía bariátrica."
+    answer: "Gracias al uso de cirugía laparoscópica (mínima invasión), la recuperación es más rápida, permitiendo retomar actividades normales en pocas semanas con el seguimiento de nuestro equipo."
   }
 ];
