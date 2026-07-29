@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { GoogleTagManager, GoogleTagManagerNoScript } from "../../components/analytics/GoogleTagManager";
 
 export const metadata: Metadata = {
   title: "Bahía Surgery | Cirugía Bariátrica en Nayarit",
@@ -14,6 +15,8 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body className="antialiased">
+        <GoogleTagManager />
+        <GoogleTagManagerNoScript />
         {children}
       </body>
     </html>

@@ -1,4 +1,7 @@
+'use client';
+
 import React from 'react';
+import { trackWhatsAppClick } from '../../lib/analytics/events';
 
 interface WhatsAppButtonProps {
   phone: string;
@@ -6,6 +9,8 @@ interface WhatsAppButtonProps {
   label: string;
   variant?: 'primary' | 'outline' | 'ghost';
   className?: string;
+  /** Identifica de dónde salió el clic para el reporte de conversiones. */
+  source?: string;
 }
 
 export const WhatsAppButton = ({
@@ -13,7 +18,8 @@ export const WhatsAppButton = ({
   message,
   label,
   variant = 'primary',
-  className = ""
+  className = "",
+  source = 'whatsapp_button'
 }: WhatsAppButtonProps) => {
   
   // Limpiar el número de teléfono (solo números) y codificar el mensaje
@@ -34,6 +40,7 @@ export const WhatsAppButton = ({
       href={whatsappUrl}
       target="_blank"
       rel="noopener noreferrer"
+      onClick={() => trackWhatsAppClick(source)}
       className={`${baseStyles} ${variants[variant]} ${className}`}
     >
       <svg 
