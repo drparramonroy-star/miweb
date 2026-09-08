@@ -64,6 +64,7 @@ export const FinalCtaSection = ({
               phone={ctaPhone}
               message={ctaMessage}
               label={ctaLabel}
+              source="cta_final"
               // Forzamos fondo verde y texto blanco
               className="relative !bg-[#25D366] hover:!bg-[#1ea952] !text-white !px-14 !py-7 !text-lg md:!text-2xl !rounded-[2.5rem] shadow-[0_20px_60px_rgba(37,211,102,0.4)] transition-all duration-500 transform group-hover:scale-105 font-black uppercase tracking-tight"
             />
@@ -78,9 +79,9 @@ export const FinalCtaSection = ({
             
             {/* Sedes con diseño minimalista. Texto forzado !text-white/30 */}
             <div className="flex items-center gap-4 !text-white/30 text-[10px] md:text-xs uppercase tracking-[0.4em] font-black pt-8 border-t border-white/5 w-full justify-center">
-              Tepic
-              <span className="w-1 h-1 bg-[#2FA4B7] rounded-full" />
               Puerto Vallarta
+              <span className="w-1 h-1 bg-[#2FA4B7] rounded-full" />
+              Bahía de Banderas
             </div>
           </div>
 

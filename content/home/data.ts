@@ -1,13 +1,14 @@
 import { SITE_CONFIG } from '../config';
 import { ServiceItem, LocationItem, FaqItem } from '../../types/data';
 
-// 1. HERO DATA - Ajustado para estatus (Riviera Nayarit) y autoridad médica
+// 1. HERO DATA - Enfocado a Puerto Vallarta y Bahía de Banderas.
+// El gancho principal es la certificación: la competencia local no la tiene.
 export const HERO_DATA = {
-  eyebrow: "Tu nuevo horizonte comienza aquí",
-  title: "Cirugía Bariátrica en Tepic y Riviera Nayarit",
-  subtitle: "Un equipo bariátrico multidisciplinario que acompaña tu transformación en Tepic y Riviera Nayarit con cirugías bariátricas como: manga gástrica, bypass, bipartición intestinal y cirugía laparoscópica con un seguimiento integral.",
-  image: "/images/hero-bahia-surgery.jpg", 
-  video: "/videos/hero-bg.mp4", 
+  eyebrow: "Puerto Vallarta y Bahía de Banderas",
+  title: "Cirugía Bariátrica en Puerto Vallarta",
+  subtitle: "Manga gástrica y bypass gástrico con un cirujano bariatra certificado y un equipo multidisciplinario que te acompaña antes y después. Quirófano en el Hospital CMQ, a minutos de Puerto Vallarta.",
+  image: "/images/hero-bahia-surgery.jpg",
+  video: "/videos/hero-bg.mp4",
   primaryCta: {
     label: "Ver si soy candidato",
     phone: SITE_CONFIG.phone,
@@ -15,90 +16,109 @@ export const HERO_DATA = {
   },
   secondaryCta: {
     label: "Conocer al Dr. Parra",
-    href: "https://drjorgeparra.com" // Enlace a sus diplomas y trayectoria
+    href: "/doctor" // Página interna: mantiene el tráfico dentro del sitio que mide
   },
   trustSignals: [
-    "Especialistas Certificados",
-    "Atención Tepic y Riviera Nayarit",
+    "Cirujano Certificado",
+    "Atención en Puerto Vallarta",
     "Equipo Multidisciplinario",
-    "Seguimiento Post-Operatorio"
+    "Paquete Todo Incluido"
   ]
 };
 
-// 2. SERVICES DATA - Incluyendo Puerto Vallarta para SEO Local
+// 2. SERVICES DATA
 export const SERVICES_DATA = {
-  title: "Procedimientos de Cirugía Bariátrica en Nayarit y Puerto Vallarta",
-  subtitle: "Nuestro equipo médico ofrece procedimientos bariátricos seguros y mínimamente invasivos para ayudar a los pacientes a recuperar su salud y calidad de vida.",
+  title: "Procedimientos de Cirugía Bariátrica en Puerto Vallarta",
+  subtitle: "Cirugía bariátrica por laparoscopía para pacientes de Puerto Vallarta y Bahía de Banderas, con valoración personalizada y seguimiento incluido.",
   items: [
     {
       title: "Manga gástrica",
-      description: "Procedimiento que reduce el tamaño del estómago para ayudar al paciente a perder peso de forma segura bajo supervisión médica.",
-      keyMessage: "Es el procedimiento más solicitado por su seguridad y efectividad.",
+      description: "Reduce el tamaño del estómago para lograr una pérdida de peso sostenida bajo supervisión médica. Se realiza por laparoscopía, con recuperación rápida.",
+      keyMessage: "El procedimiento más solicitado por su seguridad y efectividad.",
       featured: true,
-      ctaMessage: "Hola, me interesa información sobre la Manga Gástrica."
+      ctaMessage: "Hola, me interesa información y el precio de la Manga Gástrica."
     },
     {
       title: "Bypass gástrico",
-      description: "Cirugía que modifica el sistema digestivo para favorecer la pérdida de peso y mejorar la diabetes tipo 2.",
+      description: "Modifica el sistema digestivo para favorecer la pérdida de peso y mejorar el control de la diabetes tipo 2.",
       keyMessage: "Ideal para pacientes que requieren un control metabólico más profundo.",
       featured: false,
-      ctaMessage: "Hola, quiero saber más sobre el Bypass Gástrico."
+      ctaMessage: "Hola, quiero saber más y conocer el precio del Bypass Gástrico."
     },
     {
       title: "Bipartición intestinal",
-      description: "Técnica innovadora que combina la reducción del estómago con una modificación intestinal para un excelente control metabólico.",
-      keyMessage: "Equilibrio ideal entre pérdida de peso y buena absorción de nutrientes.",
+      description: "Técnica que combina la reducción del estómago con una modificación intestinal para un excelente control metabólico.",
+      keyMessage: "Equilibrio entre pérdida de peso y buena absorción de nutrientes.",
       featured: false,
       ctaMessage: "Hola, quiero saber más sobre la Bipartición Intestinal."
     },
     {
       title: "Cirugía Laparoscópica",
-      description: "Realizamos nuestras cirugías con técnicas de mínima invasión. También tratamos problemas de hernias, vesícula y cirugía antirreflujo.",
-      keyMessage: "Procedimientos más eficientes, seguros y con recuperación rápida.",
+      description: "Cirugía de mínima invasión. También tratamos hernias, vesícula y cirugía antirreflujo.",
+      keyMessage: "Procedimientos más seguros y con recuperación rápida.",
       featured: false,
       ctaMessage: "Hola, me interesa información sobre cirugía laparoscópica (hernias/vesícula/antirreflujo)."
     }
   ]
 };
 
-// 3. LOCATIONS DATA
+// 3. LOCATIONS DATA - El quirófano de Bucerías es la sede de referencia
+// para el paciente de Puerto Vallarta y la bahía.
 export const LOCATIONS_DATA = [
+  {
+    city: "Puerto Vallarta",
+    venue: "Hospital CMQ Premiere",
+    description: "Consulta y valoración en el corazón de Puerto Vallarta, en Villas Vallarta. Aquí revisamos tu caso, resolvemos tus dudas y definimos el procedimiento adecuado para ti.",
+    address: "Av. Francisco Villa 1749, Col. Villas Vallarta, Puerto Vallarta, Jalisco.",
+    schedule: "Lun-Vie: 9:00–14:00 | Sáb: 9:00–14:00",
+    mapUrl: "https://www.google.com/maps/search/?api=1&query=Hospital+CMQ+Premiere+Av+Francisco+Villa+1749+Villas+Vallarta+Puerto+Vallarta",
+    imageSrc: "/images/sede-bucerias.jpg"
+  },
+  {
+    city: "Bahía de Banderas",
+    venue: "Hospital CMQ Riviera Nayarit",
+    description: "Nuestro quirófano de referencia para pacientes de Puerto Vallarta y toda la bahía: instalaciones hospitalarias equipadas para la máxima seguridad quirúrgica, a minutos del centro de Vallarta.",
+    address: "Héroes de Nacozari 280, Bucerías, Nayarit.",
+    schedule: "Mar-Vie: 10:00–14:00 | 16:30–19:00",
+    mapUrl: "https://www.google.com/maps/search/?api=1&query=Hospital+CMQ+Buceri%CC%81as+He%CC%81roes+de+Nacozari+280",
+    imageSrc: "/images/sede-bucerias.jpg"
+  },
   {
     city: "Tepic",
     venue: "Consultorio Paseo de la Loma",
-    description: "Consultorio equipado donde realizamos las valoraciones médicas iniciales, preparación y seguimiento para pacientes de la capital.",
+    description: "Consultorio para valoraciones médicas, preparación y seguimiento de pacientes de la capital del estado.",
     address: "Paseo de la Loma 407, Residencial La Loma, Tepic, Nayarit.",
-    schedule: "Lun: 9:00–14:00 | Sáb: 10:00–14:00", 
-    mapUrl: "https://maps.app.goo.gl/vS1F4F9y7f4L8vXG9", // Ejemplo de link
+    schedule: "Lun: 9:00–14:00 | Sáb: 10:00–14:00",
+    mapUrl: "https://www.google.com/maps/search/?api=1&query=Paseo+de+la+Loma+407+Residencial+La+Loma+Tepic+Nayarit",
     imageSrc: "/images/sede-tepic.jpg"
-  },
-  {
-    city: "Riviera Nayarit", // Se cambió Bucerías por Riviera Nayarit por estatus
-    venue: "Hospital CMQ Riviera Nayarit",
-    description: "Instalaciones hospitalarias de vanguardia con fácil acceso desde Puerto Vallarta, equipadas para la máxima seguridad quirúrgica.",
-    address: "Héroes de Nacozari 280, Bucerías, Nayarit.", 
-    schedule: "Mar-Vie: 10:00–14:00 | 16:30–19:00",
-    mapUrl: "https://maps.app.goo.gl/uR6Y7Z8Q2P3L4M5N6", // Ejemplo de link
-    imageSrc: "/images/sede-bucerias.jpg"
   }
 ];
 
-// 4. FAQ DATA
+// 4. FAQ DATA - Prioriza las dudas que aparecen en las búsquedas reales
+// de la campaña: precio, ubicación y candidatura.
 export const FAQ_DATA: FaqItem[] = [
   {
+    question: "¿Cuánto cuesta una manga gástrica en Puerto Vallarta?",
+    answer: "Manejamos un paquete quirúrgico todo incluido: honorarios del cirujano y del equipo, hospitalización en el Hospital CMQ, valoración con nutrióloga y psicólogo, y 4 consultas de seguimiento post-operatorio. Escríbenos por WhatsApp y te compartimos el costo exacto según tu caso y el procedimiento que necesites."
+  },
+  {
+    question: "¿Dónde atienden si vivo en Puerto Vallarta?",
+    answer: "Las cirugías se realizan en el Hospital CMQ, en Bucerías, a minutos de Puerto Vallarta y con acceso directo desde toda la bahía: Nuevo Nayarit, Mezcales, Ixtapa y la zona norte hasta La Peñita, así como el sur de Vallarta."
+  },
+  {
     question: "¿Quién es candidato para cirugía bariátrica?",
-    answer: "La cirugía bariátrica es una opción para personas con obesidad o sobrepeso que buscan un cambio duradero. Durante la valoración personalizada analizamos tu caso para determinar si eres candidato."
+    answer: "La cirugía bariátrica es una opción para personas con obesidad o sobrepeso que buscan un cambio duradero. En la valoración personalizada analizamos tu índice de masa corporal, tu estado de salud y tus antecedentes para determinar si eres candidato y qué procedimiento te conviene."
   },
   {
-    question: "¿Cuál es la diferencia entre manga y bypass?",
-    answer: "La manga reduce el tamaño del estómago; el bypass modifica el proceso digestivo para un mayor impacto metabólico. El Dr. Parra te orientará sobre cuál es mejor para tu perfil."
+    question: "¿El Dr. Parra es cirujano certificado?",
+    answer: `Sí. ${SITE_CONFIG.credentials.certification}. Cédula profesional ${SITE_CONFIG.credentials.cedulaProfesional} y cédula de especialidad ${SITE_CONFIG.credentials.cedulaEspecialidad}. La certificación acredita formación y evaluación específica en cirugía bariátrica, no solo en cirugía general.`
   },
   {
-    question: "¿Tienen atención en Puerto Vallarta?",
-    answer: "Nuestros procedimientos se realizan en el Hospital CMQ Riviera Nayarit, ubicado en Bucerías, con fácil acceso y cercanía total para pacientes de Puerto Vallarta y toda la bahía."
+    question: "¿Cuál es la diferencia entre manga gástrica y bypass?",
+    answer: "La manga reduce el tamaño del estómago; el bypass además modifica el proceso digestivo, con mayor impacto metabólico y mejor control de la diabetes tipo 2. El Dr. Parra te orienta sobre cuál se ajusta mejor a tu perfil durante la valoración."
   },
   {
     question: "¿Cuánto tiempo dura la recuperación?",
-    answer: "Gracias al uso de cirugía laparoscópica (mínima invasión), la recuperación es más rápida, permitiendo retomar actividades normales en pocas semanas con el seguimiento de nuestro equipo."
+    answer: "Al realizarse por laparoscopía (mínima invasión), la recuperación es más rápida y permite retomar actividades normales en pocas semanas, siempre con el seguimiento de nuestro equipo."
   }
 ];

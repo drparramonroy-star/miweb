@@ -30,9 +30,9 @@ export const HeroSection = ({
   primaryCta,
   secondaryCta,
   trustSignals = [
+    "Cirujano Certificado",
+    "Atención en Puerto Vallarta",
     "Equipo Multidisciplinario",
-    "Sedes en Tepic y Bucerías",
-    "Seguimiento Cercano",
     "Valoración por WhatsApp"
   ]
 }: HeroSectionProps) => {
@@ -87,6 +87,7 @@ export const HeroSection = ({
               phone={primaryCta.phone}
               message={primaryCta.message}
               label={primaryCta.label}
+              source="hero"
               className="!py-4 !px-8 !text-lg shadow-xl shadow-emerald-900/20"
             />
             {secondaryCta && (

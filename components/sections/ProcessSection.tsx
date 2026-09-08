@@ -89,6 +89,7 @@ export const ProcessSection = ({
                 phone={ctaPhone}
                 message={ctaMessage || ""}
                 label={ctaLabel}
+                source="proceso"
                 className="relative !bg-[#25D366] hover:!bg-[#1ea952] !text-white !px-12 !py-6 !text-lg md:!text-xl !rounded-[2rem] shadow-2xl transition-all duration-500 transform group-hover:scale-105 font-black"
               />
             </div>

@@ -79,6 +79,7 @@ export const LocationCard = ({
               phone={ctaPhone} 
               message={ctaMessage} 
               label="Agendar valoración aquí" 
+              source="ubicacion"
               className="w-full !py-4 shadow-md !rounded-xl"
             />
           )}

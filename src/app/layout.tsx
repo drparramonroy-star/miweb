@@ -3,8 +3,8 @@ import "./globals.css";
 import { GoogleTagManager, GoogleTagManagerNoScript } from "../../components/analytics/GoogleTagManager";
 
 export const metadata: Metadata = {
-  title: "Bahía Surgery | Cirugía Bariátrica en Nayarit",
-  description: "Especialistas en Manga Gástrica y Bypass Gástrico liderados por el Dr. Jorge Arturo Parra Monroy en Tepic y Bucerías.",
+  title: "Bahía Surgery | Cirugía Bariátrica en Puerto Vallarta",
+  description: "Manga gástrica y bypass gástrico en Puerto Vallarta y Bahía de Banderas con el Dr. Jorge Arturo Parra Monroy, cirujano bariatra certificado. Paquete todo incluido.",
 };
 
 export default function RootLayout({

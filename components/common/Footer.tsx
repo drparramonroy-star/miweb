@@ -11,7 +11,7 @@ export const Footer = () => {
           
           {/* Columna 1: Identidad y Logo */}
           <div className="lg:col-span-1">
-            <a href="#" className="inline-block mb-6">
+            <a href="/" className="inline-block mb-6">
               <img 
                 src="/images/logo-bahia.png" 
                 alt="Bahía Surgery" 
@@ -19,7 +19,7 @@ export const Footer = () => {
               />
             </a>
             <p className="text-slate-500 text-sm leading-relaxed mb-6">
-              Especialistas en cirugía bariátrica avanzada. Transformamos vidas a través de un enfoque multidisciplinario y humano en Nayarit y la Riviera.
+              Cirugía bariátrica en Puerto Vallarta y Bahía de Banderas. Manga gástrica y bypass con cirujano certificado y acompañamiento multidisciplinario.
             </p>
             {/* Redes Sociales Sutiles */}
             <div className="flex gap-4">
@@ -39,12 +39,12 @@ export const Footer = () => {
             <h4 className="text-[#0F3C5C] font-bold text-sm uppercase tracking-widest mb-6">Ubicaciones</h4>
             <div className="space-y-6">
               <div>
-                <p className="text-[#0F3C5C] font-bold text-sm">Sede Tepic</p>
-                <p className="text-slate-500 text-sm">Paseo de la Loma 407, Residencial La Loma.</p>
+                <p className="text-[#0F3C5C] font-bold text-sm">Quirófano · Bahía de Banderas</p>
+                <p className="text-slate-500 text-sm">Hospital CMQ, Héroes de Nacozari 280, Bucerías. A minutos de Puerto Vallarta.</p>
               </div>
               <div>
-                <p className="text-[#0F3C5C] font-bold text-sm">Sede Riviera Nayarit</p>
-                <p className="text-slate-500 text-sm">Hospital CMQ, Héroes de Nacozari 280, Bucerías.</p>
+                <p className="text-[#0F3C5C] font-bold text-sm">Consultorio · Tepic</p>
+                <p className="text-slate-500 text-sm">Paseo de la Loma 407, Residencial La Loma.</p>
               </div>
             </div>
           </div>
@@ -80,7 +80,7 @@ export const Footer = () => {
                 </li>
               ))}
               <li>
-                <a href="https://drjorgeparra.com" target="_blank" className="text-[#2FA4B7] font-bold text-sm hover:underline">
+                <a href="/doctor" className="text-[#2FA4B7] font-bold text-sm hover:underline">
                   Trayectoria Médica
                 </a>
               </li>
@@ -97,8 +97,7 @@ export const Footer = () => {
           </div>
           
           <div className="flex gap-6 text-[10px] uppercase tracking-widest font-bold text-slate-400">
-            <a href="#" className="hover:text-[#0F3C5C] transition-colors">Privacidad</a>
-            <a href="#" className="hover:text-[#0F3C5C] transition-colors">Términos</a>
+            <a href="#faq" className="hover:text-[#0F3C5C] transition-colors">Preguntas frecuentes</a>
           </div>
         </div>
       </Container>
