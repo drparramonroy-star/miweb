@@ -72,7 +72,8 @@ export const LOCATIONS_DATA = [
     address: "Av. Francisco Villa 1749, Col. Villas Vallarta, Puerto Vallarta, Jalisco.",
     schedule: "Lun-Vie: 9:00–14:00 | Sáb: 9:00–14:00",
     mapUrl: "https://www.google.com/maps/search/?api=1&query=Hospital+CMQ+Premiere+Av+Francisco+Villa+1749+Villas+Vallarta+Puerto+Vallarta",
-    imageSrc: "/images/sede-bucerias.jpg"
+    // PENDIENTE: falta foto real del Hospital CMQ Premiere (Villas Vallarta).
+    imageSrc: "/images/quirofano-2.jpg"
   },
   {
     city: "Bahía de Banderas",
@@ -81,7 +82,8 @@ export const LOCATIONS_DATA = [
     address: "Héroes de Nacozari 280, Bucerías, Nayarit.",
     schedule: "Mar-Vie: 10:00–14:00 | 16:30–19:00",
     mapUrl: "https://www.google.com/maps/search/?api=1&query=Hospital+CMQ+Buceri%CC%81as+He%CC%81roes+de+Nacozari+280",
-    imageSrc: "/images/sede-bucerias.jpg"
+    // Foto real de la fachada del Hospital CMQ Riviera Nayarit.
+    imageSrc: "/images/bento-sedes.jpg"
   },
   {
     city: "Tepic",
