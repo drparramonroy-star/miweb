@@ -7,8 +7,11 @@ export const HERO_DATA = {
   eyebrow: "Puerto Vallarta y Bahía de Banderas",
   title: "Cirugía Bariátrica en Puerto Vallarta",
   subtitle: "Manga gástrica y bypass gástrico con un cirujano bariatra certificado y un equipo multidisciplinario que te acompaña antes y después. Quirófano en el Hospital CMQ, a minutos de Puerto Vallarta.",
-  image: "/images/hero-bahia-surgery.jpg",
-  video: "/videos/hero-bg.mp4",
+  // Foto real del Dr. Parra y su equipo operando por laparoscopía.
+  // Sustituye al video de playa: comunicaba "resort", no cirugía bariátrica,
+  // y además pesaba 5 MB en autoplay (penalizaba la velocidad de carga).
+  image: "/images/cirugia-laparoscopica.jpg",
+  video: undefined,
   primaryCta: {
     label: "Ver si soy candidato",
     phone: SITE_CONFIG.phone,

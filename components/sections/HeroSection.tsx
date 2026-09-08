@@ -54,8 +54,9 @@ export const HeroSection = ({
           imageSrc && (
             <img
               src={imageSrc}
-              alt={title}
-              className="w-full h-full object-cover opacity-50"
+              alt="El Dr. Jorge Parra y su equipo realizando una cirugía bariátrica por laparoscopía"
+              className="w-full h-full object-cover opacity-60"
+              fetchPriority="high"
             />
           )
         )}

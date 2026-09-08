@@ -19,7 +19,7 @@ export function getMedicalBusinessSchema() {
     url: SITE_CONFIG.url,
     description:
       'Cirugía bariátrica en Puerto Vallarta y Bahía de Banderas: manga gástrica, bypass gástrico y bipartición intestinal con cirujano bariatra certificado.',
-    image: `${SITE_CONFIG.url}/images/hero-bahia-surgery.jpg`,
+    image: `${SITE_CONFIG.url}/images/cirugia-laparoscopica.jpg`,
     logo: `${SITE_CONFIG.url}/images/logo-bahia.png`,
     telephone: `+${SITE_CONFIG.phone}`,
     medicalSpecialty: 'Bariatric',
