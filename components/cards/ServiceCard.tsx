@@ -108,6 +108,7 @@ export const ServiceCard = ({
           message={ctaMessage}
           label={ctaLabel}
           variant={featured ? 'primary' : 'outline'}
+          source="servicio"
           className="w-full !py-4 !rounded-xl font-bold"
         />
       </div>

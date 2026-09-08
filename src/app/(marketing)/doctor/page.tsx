@@ -6,6 +6,8 @@ import React from 'react';
 import { Container } from '../../../../components/ui/Container';
 import { Button } from '../../../../components/ui/Button';
 import { Section } from '../../../../components/ui/Section';
+import { WhatsAppButton } from '../../../../components/common/WhatsAppButton';
+import { SITE_CONFIG } from '../../../../content/config';
 
 export default function DoctorProfilePage() {
   return (
@@ -19,7 +21,7 @@ export default function DoctorProfilePage() {
           <div className="relative inline-block mb-10">
             <div className="w-48 h-48 md:w-64 md:h-64 rounded-[3rem] border-4 border-[#2FA4B7] overflow-hidden mx-auto shadow-2xl transform rotate-3 hover:rotate-0 transition-transform duration-500 bg-white">
               <img 
-                src="/images/dr.webp" 
+                src="/images/dr-jorge-parra.png" 
                 alt="Dr. Jorge Parra Monroy" 
                 className="w-full h-full object-cover"
               />
@@ -35,9 +37,13 @@ export default function DoctorProfilePage() {
           <p className="text-[#2FA4B7] font-bold text-xl mb-10 uppercase tracking-[0.3em]">Cirujano Bariatra y Laparoscopista</p>
           
           <div className="flex flex-wrap justify-center gap-4">
-            <Button href="https://wa.me/523111050399" variant="primary" className="!bg-[#2FA4B7] !border-none px-10 py-6 text-lg shadow-lg hover:shadow-[#2FA4B7]/40">
-              Agendar Cita
-            </Button>
+            <WhatsAppButton
+              phone={SITE_CONFIG.phone}
+              message={SITE_CONFIG.defaultMessage}
+              label="Agendar Cita"
+              source="doctor_hero"
+              className="!bg-[#2FA4B7] hover:!bg-white hover:!text-[#0F3C5C] !border-none !px-10 !py-6 !text-lg shadow-lg"
+            />
             <a 
               href="https://www.instagram.com/dr.jorge.parra" 
               target="_blank"
@@ -80,6 +86,27 @@ export default function DoctorProfilePage() {
             <p className="leading-relaxed">
               Cuento con una amplia experiencia en cirugía bariátrica y metabólica. Miembro de la Asociación Mexicana de Cirugía Endoscópica y Asociación Mexicana de Cirugía General con certificación vigente como Cirujano General.
             </p>
+          </div>
+
+          {/* Prueba visual de la certificación bariátrica: es el diferenciador
+              principal frente a la competencia local. */}
+          <div className="mt-12 pt-10 border-t border-slate-100">
+            <p className="text-[10px] uppercase tracking-[0.2em] text-[#2FA4B7] font-black mb-6 text-center">
+              Certificación en cirugía bariátrica
+            </p>
+            <div className="grid md:grid-cols-2 gap-8 items-center">
+              <img
+                src="/images/constancia-cmcoem.jpg"
+                alt="Constancia del Colegio Mexicano de Cirugía para la Obesidad y Enfermedades Metabólicas a nombre de Jorge Arturo Parra Monroy"
+                className="w-full rounded-2xl border border-slate-100 shadow-lg"
+                loading="lazy"
+              />
+              <p className="text-slate-600 leading-relaxed text-center md:text-left">
+                {SITE_CONFIG.credentials.certification}. Esta certificación
+                acredita formación y evaluación específica en cirugía bariátrica,
+                más allá de la especialidad en cirugía general.
+              </p>
+            </div>
           </div>
         </div>
       </Container>
@@ -149,14 +176,6 @@ export default function DoctorProfilePage() {
           <h2 className="text-3xl font-bold mb-12">Ubicaciones</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
             <div>
-              <h4 className="text-[#2FA4B7] font-black uppercase tracking-widest mb-4">Tepic</h4>
-              <p className="text-sm opacity-80 mb-6">
-                Av Del Valle #91- 3er piso, Col. Ciudad Del Valle.<br />
-                Paseo de La Loma #407, Col Centro.
-              </p>
-              <p className="font-bold text-xl">(311) 10 50 399</p>
-            </div>
-            <div>
               <h4 className="text-[#2FA4B7] font-black uppercase tracking-widest mb-4">Puerto Vallarta</h4>
               <p className="text-sm opacity-80 mb-6">
                 Hospital CMQ Premiere.<br />
@@ -164,13 +183,22 @@ export default function DoctorProfilePage() {
               </p>
               <p className="font-bold text-xl">(311) 10 50 399</p>
             </div>
+            <div>
+              <h4 className="text-[#2FA4B7] font-black uppercase tracking-widest mb-4">Tepic</h4>
+              <p className="text-sm opacity-80 mb-6">
+                Av Del Valle #91- 3er piso, Col. Ciudad Del Valle.<br />
+                Paseo de La Loma #407, Col Centro.
+              </p>
+              <p className="font-bold text-xl">(311) 10 50 399</p>
+            </div>
           </div>
-          <Button 
-            href="https://wa.me/523111050399" 
-            className="mt-12 w-full !bg-white !text-[#0F3C5C] border-none font-black py-7 text-lg rounded-2xl shadow-xl hover:!bg-slate-100 transition-all transform hover:scale-[1.01]"
-          >
-            Agendar en cualquiera de las sedes
-          </Button>
+          <WhatsAppButton
+            phone={SITE_CONFIG.phone}
+            message={SITE_CONFIG.defaultMessage}
+            label="Agendar en cualquiera de las sedes"
+            source="doctor_ubicaciones"
+            className="mt-12 w-full !bg-white !text-[#0F3C5C] !border-none font-black !py-7 !text-lg !rounded-2xl shadow-xl hover:!bg-slate-100"
+          />
         </div>
       </Container>
 
@@ -179,35 +207,6 @@ export default function DoctorProfilePage() {
         <div className="bg-white p-8 rounded-3xl shadow-lg border border-slate-100 inline-block px-12">
           <p className="text-slate-400 text-[10px] font-black uppercase tracking-[0.2em] mb-2">Horario de Atención</p>
           <p className="text-[#0F3C5C] font-bold text-lg leading-snug">Lun - Vie: 09:00 - 14:00<br/>Sáb: 09:00 - 14:00</p>
-        </div>
-      </Container>
-
-      {/* --- NUEVA SECCIÓN --- */}
-      {/* 9. QR DE CONTACTO RÁPIDO (El toque NFT Digital Card) */}
-      <Container className="max-w-4xl mt-24 mb-32 text-center relative z-10">
-        <div className="bg-white p-12 md:p-16 rounded-[3rem] shadow-2xl border border-slate-100 inline-block">
-          <span className="text-[10px] uppercase tracking-[0.3em] text-[#2FA4B7] font-black mb-4 block">NFT Digital Card</span>
-          <h3 className="text-3xl font-black text-[#0F3C5C] mb-8 leading-tight">Acceso Directo <br/> a mi Contacto</h3>
-
-          {/* Recuadro elegante para el QR */}
-          <div className="w-64 h-64 bg-slate-50 mx-auto rounded-3xl flex items-center justify-center border-8 border-[#0F3C5C] p-4 shadow-inner relative hover:scale-105 transition-transform duration-500 group">
-            {/* Detalles tech en las esquinas */}
-            <div className="absolute top-2 left-2 w-4 h-4 border-t-4 border-l-4 border-[#2FA4B7] rounded-tl-sm"/>
-            <div className="absolute top-2 right-2 w-4 h-4 border-t-4 border-r-4 border-[#2FA4B7] rounded-tr-sm"/>
-            <div className="absolute bottom-2 left-2 w-4 h-4 border-b-4 border-l-4 border-[#2FA4B7] rounded-bl-sm"/>
-            <div className="absolute bottom-2 right-2 w-4 h-4 border-b-4 border-r-4 border-[#2FA4B7] rounded-br-sm"/>
-
-            {/* AQUÍ VA EL QR REAL */}
-            <img 
-              src="/images/qr-profile.png" // User must save the QR image with this name
-              alt="Código QR Perfil Dr. Jorge Parra" 
-              className="w-full h-full object-contain"
-            />
-          </div>
-
-          <p className="mt-10 text-slate-500 text-sm max-w-sm mx-auto leading-relaxed">
-            Escanea con la cámara de tu celular para abrir este perfil al instante, guardar mi WhatsApp y ver mis sedes.
-          </p>
         </div>
       </Container>
 

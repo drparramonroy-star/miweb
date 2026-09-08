@@ -2,7 +2,8 @@
 
 import React, { useState, useEffect } from 'react';
 import { Container } from '../ui/Container';
-import { Button } from '../ui/Button';
+import { WhatsAppButton } from './WhatsAppButton';
+import { SITE_CONFIG } from '../../content/config';
 
 export const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -66,13 +67,13 @@ export const Navbar = () => {
                 {link.label}
               </a>
             ))}
-            <Button 
-              href="https://wa.me/523111050399" 
-              size="sm" 
-              className="!bg-[#2FA4B7] !text-white font-black text-[10px] tracking-[0.2em] px-8 py-5 rounded-2xl shadow-lg hover:scale-105 transition-transform"
-            >
-              CITAS
-            </Button>
+            <WhatsAppButton
+              phone={SITE_CONFIG.phone}
+              message={SITE_CONFIG.defaultMessage}
+              label="CITAS"
+              source="navbar_desktop"
+              className="!bg-[#2FA4B7] hover:!bg-[#0F3C5C] !text-white font-black !text-[10px] tracking-[0.2em] !px-8 !py-5 !rounded-2xl shadow-lg"
+            />
           </div>
 
           {/* Menú Móvil */}
@@ -114,8 +115,14 @@ export const Navbar = () => {
             </a>
           ))}
         </div>
-        <div className="p-8 mt-auto">
-          <Button href="https://wa.me/523111050399" className="w-full !bg-[#25D366] !text-white !py-6 rounded-3xl font-black shadow-2xl" onClick={() => setIsMobileMenuOpen(false)}>HABLAR CON EL DOCTOR</Button>
+        <div className="p-8 mt-auto" onClick={() => setIsMobileMenuOpen(false)}>
+          <WhatsAppButton
+            phone={SITE_CONFIG.phone}
+            message={SITE_CONFIG.defaultMessage}
+            label="HABLAR CON EL DOCTOR"
+            source="navbar_movil"
+            className="w-full !py-6 !rounded-3xl font-black shadow-2xl"
+          />
         </div>
       </div>
     </>

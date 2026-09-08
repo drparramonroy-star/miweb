@@ -50,6 +50,7 @@ export const ServicesSection = ({
                 message={ctaMessage}
                 label={ctaLabel}
                 variant="primary"
+                source="servicios_seccion"
                 className="shadow-lg"
               />
             </div>

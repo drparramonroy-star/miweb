@@ -32,8 +32,8 @@ export const LocationsSection = ({
           </p>
         </div>
 
-        {/* Grid de 2 Tarjetas Grandes (Tepic / Bucerías) */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 max-w-6xl mx-auto">
+        {/* Grid de tarjetas de sede */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {locations.map((loc, index) => (
             <LocationCard key={index} {...loc} />
           ))}

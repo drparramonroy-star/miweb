@@ -16,6 +16,8 @@ import { FloatingWhatsAppButton } from '../../../components/common/FloatingWhats
 import { BmiCalculatorSection } from '../../../components/sections/BmiCalculatorSection';
 // IMPORTANTE: Nueva sección de Reels
 import { ReelsSection } from '../../../components/sections/ReelsSection';
+// Paquete todo incluido: responde a la intención de precio
+import { PackageSection } from '../../../components/sections/PackageSection';
 
 // Contenido
 import { SITE_CONFIG } from '../../../content/config';
@@ -36,13 +38,13 @@ export default function HomePage() {
         trustSignals={HERO_DATA.trustSignals}
       />
 
-      {/* 2. TRUST BAR - Actualizado con Puerto Vallarta */}
-      <TrustSection 
-        sectionTitle="Atención bariátrica con enfoque humano y especializado"
+      {/* 2. TRUST BAR - Enfocado a Puerto Vallarta y a la certificación */}
+      <TrustSection
+        sectionTitle="Cirugía bariátrica para pacientes de Puerto Vallarta y la bahía"
         items={[
-          { 
-            title: "Enfoque especializado", 
-            description: "Centrados en cirugía bariátrica como manga gástrica, bypass gástrico y bipartición intestinal.",
+          {
+            title: "Cirujano certificado",
+            description: "Certificado por el Colegio Mexicano de Cirugía para la Obesidad y Enfermedades Metabólicas.",
             icon: <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
           },
           { 
@@ -50,9 +52,9 @@ export default function HomePage() {
             description: "Médico, nutrición y psicología trabajando para ti.",
             icon: <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 005.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
           },
-          { 
-            title: "Nayarit y Puerto Vallarta", 
-            description: "Sedes en Tepic y Riviera Nayarit, con fácil acceso desde toda la bahía.",
+          {
+            title: "A minutos de Puerto Vallarta",
+            description: "Quirófano en el Hospital CMQ, con acceso directo desde Vallarta y toda Bahía de Banderas.",
             icon: <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
           },
           { 
@@ -83,19 +85,19 @@ export default function HomePage() {
       {/* 4. BENEFICIOS (BENTO GRID) */}
       <BenefitsSection 
         title="¿Por qué Bahía Surgery?"
-        subtitle="Un enfoque multidisciplinario diseñado para pacientes que buscan resultados permanentes y seguros en Nayarit y Riviera Nayarit."
+        subtitle="Un enfoque multidisciplinario diseñado para pacientes de Puerto Vallarta y Bahía de Banderas que buscan resultados permanentes y seguros."
         benefits={[
-          { 
-            title: "Tepic y Riviera Nayarit", 
-            description: "Dos sedes estratégicas para acompañarte en la capital y la zona costera.",
-            keyMessage: "Mayor cercanía y seguimiento local",
+          {
+            title: "Cerca de Puerto Vallarta",
+            description: "Quirófano en el Hospital CMQ, a minutos de Vallarta y con acceso desde toda la bahía.",
+            keyMessage: "Sin salir de tu zona",
             icon: <img src="/images/quirofano-1.jpg" className="w-full h-full object-cover" alt="Instalaciones y Sedes" />
           },
           { 
             title: "Equipo Multidisciplinario", 
             description: "Cirujano, Nutrición y Psicología integrados en un solo plan de salud.",
             keyMessage: "Atención Integral 360°",
-            icon: <img src="/images/quirofano-2.jpg" className="w-full h-full object-cover" alt="Equipo Médico en acción" />
+            icon: <img src="/images/bento-equipo.jpg" className="w-full h-full object-cover" alt="Cirujano y nutrióloga revisando el plan del paciente" />
           },
           { 
             title: "Enfoque personalizado", 
@@ -112,13 +114,16 @@ export default function HomePage() {
         ]}
       />
 
+      {/* PAQUETE TODO INCLUIDO (intención de precio) */}
+      <PackageSection />
+
       {/* CALCULADORA IMC */}
       <BmiCalculatorSection phone={SITE_CONFIG.phone} />
 
       {/* 5. UBICACIONES */}
-      <LocationsSection 
-        title="Nuestras Ubicaciones"
-        subtitle="Encuéntranos en Tepic y Riviera Nayarit con instalaciones de primer nivel."
+      <LocationsSection
+        title="Dónde te atendemos"
+        subtitle="Consulta en Puerto Vallarta y quirófano en el Hospital CMQ de Bucerías, a minutos de la ciudad. También damos consulta en Tepic."
         locations={LOCATIONS_DATA.map(l => ({
           ...l,
           ctaPhone: SITE_CONFIG.phone,
@@ -166,17 +171,17 @@ export default function HomePage() {
         testimonials={[
           {
             name: "Paciente",
-            location: "Tepic, Nayarit",
+            location: "Puerto Vallarta, Jalisco",
             quote: "La valoración médica me ayudó a entender qué opción era la adecuada para mí y el proceso se sintió acompañado desde el inicio.",
             keyMessage: "Hoy me siento con más energía."
           },
           {
             name: "Paciente",
-            location: "Riviera Nayarit",
+            location: "Bahía de Banderas, Nayarit",
             quote: "Tenía muchas dudas antes de iniciar. El equipo explicó cada paso con claridad y eso me dio mucha confianza.",
             keyMessage: "Valoro mucho el seguimiento post-cirugía."
           }
-        ]} 
+        ]}
       />
 
       {/* --- NUEVA SECCIÓN: REELS DE INSTAGRAM --- */}
