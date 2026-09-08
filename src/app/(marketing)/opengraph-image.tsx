@@ -2,7 +2,7 @@ import { ImageResponse } from 'next/og';
 
 // Configuración de la imagen
 export const runtime = 'edge';
-export const alt = 'Bahía Surgery - Grupo Bariátrico en Nayarit';
+export const alt = 'Bahía Surgery - Cirugía Bariátrica en Puerto Vallarta';
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
 
@@ -38,7 +38,7 @@ export default function Image() {
         
         {/* Ubicaciones */}
         <div style={{ color: 'white', fontSize: 24, marginTop: 60, opacity: 0.8 }}>
-          Tepic • Bucerías
+          Puerto Vallarta • Bahía de Banderas
         </div>
       </div>
     ),
