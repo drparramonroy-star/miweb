@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     siteName: SITE_CONFIG.name,
     locale: 'es_MX',
     type: 'website',
-    images: ['/images/quirofano-1.jpg'],
+    images: ['/images/cirugia-laparoscopica.jpg'],
   },
 };
 

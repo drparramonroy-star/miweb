@@ -21,7 +21,7 @@ export default function DoctorProfilePage() {
           <div className="relative inline-block mb-10">
             <div className="w-48 h-48 md:w-64 md:h-64 rounded-[3rem] border-4 border-[#2FA4B7] overflow-hidden mx-auto shadow-2xl transform rotate-3 hover:rotate-0 transition-transform duration-500 bg-white">
               <img 
-                src="/images/dr.webp" 
+                src="/images/dr-jorge-parra.png" 
                 alt="Dr. Jorge Parra Monroy" 
                 className="w-full h-full object-cover"
               />
@@ -86,6 +86,27 @@ export default function DoctorProfilePage() {
             <p className="leading-relaxed">
               Cuento con una amplia experiencia en cirugía bariátrica y metabólica. Miembro de la Asociación Mexicana de Cirugía Endoscópica y Asociación Mexicana de Cirugía General con certificación vigente como Cirujano General.
             </p>
+          </div>
+
+          {/* Prueba visual de la certificación bariátrica: es el diferenciador
+              principal frente a la competencia local. */}
+          <div className="mt-12 pt-10 border-t border-slate-100">
+            <p className="text-[10px] uppercase tracking-[0.2em] text-[#2FA4B7] font-black mb-6 text-center">
+              Certificación en cirugía bariátrica
+            </p>
+            <div className="grid md:grid-cols-2 gap-8 items-center">
+              <img
+                src="/images/constancia-cmcoem.jpg"
+                alt="Constancia del Colegio Mexicano de Cirugía para la Obesidad y Enfermedades Metabólicas a nombre de Jorge Arturo Parra Monroy"
+                className="w-full rounded-2xl border border-slate-100 shadow-lg"
+                loading="lazy"
+              />
+              <p className="text-slate-600 leading-relaxed text-center md:text-left">
+                {SITE_CONFIG.credentials.certification}. Esta certificación
+                acredita formación y evaluación específica en cirugía bariátrica,
+                más allá de la especialidad en cirugía general.
+              </p>
+            </div>
           </div>
         </div>
       </Container>
