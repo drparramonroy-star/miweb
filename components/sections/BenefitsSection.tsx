@@ -42,16 +42,22 @@ export const BenefitsSection = ({
         </div>
       </Container>
 
-      {/* CONTENEDOR CARRUSEL */}
-      <div className="relative w-full overflow-x-auto pb-12 hide-scrollbar snap-x snap-mandatory">
-        <div className="flex gap-6 px-[5%] md:px-[10%] min-w-max">
-          
+      {/*
+        En móvil funciona como carrusel horizontal (con snap).
+        A partir de lg se convierte en rejilla: en escritorio el scroll
+        horizontal no tenía ninguna señal visual y las tarjetas se veían
+        cortadas, como si la sección estuviera rota.
+      */}
+      <div className="relative w-full overflow-x-auto lg:overflow-visible pb-12 hide-scrollbar snap-x snap-mandatory lg:snap-none">
+        <Container className="lg:!px-0">
+          <div className="flex gap-6 px-[5%] md:px-[10%] min-w-max lg:grid lg:grid-cols-4 lg:gap-8 lg:px-0 lg:min-w-0">
+
           {benefits.map((benefit, index) => (
-            <div 
+            <div
               key={index}
-              className={`snap-center w-[85vw] md:w-[450px] rounded-[3rem] p-10 md:p-12 transition-all duration-700 flex flex-col justify-between h-[550px] md:h-[600px] group
-                ${index % 2 === 0 
-                  ? 'bg-white/5 border border-white/10 hover:bg-white/10' 
+              className={`snap-center w-[85vw] md:w-[450px] lg:w-auto rounded-[3rem] p-10 md:p-12 lg:p-8 transition-all duration-700 flex flex-col justify-between h-[550px] md:h-[600px] lg:h-auto lg:min-h-[520px] group
+                ${index % 2 === 0
+                  ? 'bg-white/5 border border-white/10 hover:bg-white/10'
                   : 'bg-white text-[#0F3C5C]'
                 }`}
             >
@@ -63,13 +69,13 @@ export const BenefitsSection = ({
                   {benefit.icon}
                 </div>
                 
-                <h3 className={`text-2xl md:text-3xl font-black mb-4 tracking-tight
+                <h3 className={`text-2xl md:text-3xl lg:text-xl font-black mb-4 tracking-tight
                   ${index % 2 === 0 ? 'text-white' : 'text-[#0F3C5C]'}`}
                 >
                   {benefit.title}
                 </h3>
-                
-                <p className={`text-lg leading-relaxed font-medium
+
+                <p className={`text-lg lg:text-base leading-relaxed font-medium
                   ${index % 2 === 0 ? 'text-slate-400' : 'text-slate-500'}`}
                 >
                   {benefit.description}
@@ -89,9 +95,10 @@ export const BenefitsSection = ({
             </div>
           ))}
 
-          {/* Spacer final */}
-          <div className="w-[5vw] md:w-[10vw]" />
-        </div>
+          {/* Spacer final: solo aplica al carrusel de móvil/tablet */}
+          <div className="w-[5vw] md:w-[10vw] lg:hidden" />
+          </div>
+        </Container>
       </div>
     </section>
   );

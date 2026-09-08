@@ -97,7 +97,7 @@ export default function HomePage() {
             title: "Equipo Multidisciplinario", 
             description: "Cirujano, Nutrición y Psicología integrados en un solo plan de salud.",
             keyMessage: "Atención Integral 360°",
-            icon: <img src="/images/quirofano-2.jpg" className="w-full h-full object-cover" alt="Equipo Médico en acción" />
+            icon: <img src="/images/bento-equipo.jpg" className="w-full h-full object-cover" alt="Cirujano y nutrióloga revisando el plan del paciente" />
           },
           { 
             title: "Enfoque personalizado", 
